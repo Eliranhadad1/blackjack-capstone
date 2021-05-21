@@ -27,9 +27,12 @@ def check_winning(user_cards, computer_cards):
         print("Computer got Blackjack, you lose!")
         return "Game_end"
     elif sum(user_cards) == 21:
-            print("Win with a Blackjack!")
-            return "Game_end"
-    if sum(user_cards) > 21:
+        print("Win with a Blackjack!")
+        return "Game_end"
+    elif sum(user_cards) == sum(computer_cards):
+        print("It's a draw!")
+        return "Game_end"
+    elif sum(user_cards) > 21:
         clear()
         print(logo)
         print(f"Your final hand: {user_cards}, final score: {sum(user_cards)}")
